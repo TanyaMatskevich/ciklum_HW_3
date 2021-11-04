@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="productServlet"
+          class="com.ciklum.ciklumwebhw3.servlet.ProductServlet">
+        <constructor-arg ref="productDao"/>
+    </bean>
+    <bean id="myServletContextListener" class="com.ciklum.ciklumwebhw3.util.MyServletContextListener"/>
+    <bean id="myFilter" class="com.ciklum.ciklumwebhw3.util.MyFilter">
+    </bean>
+
+</beans>
