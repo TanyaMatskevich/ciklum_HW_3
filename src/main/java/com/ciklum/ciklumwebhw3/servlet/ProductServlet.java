@@ -2,6 +2,8 @@ package com.ciklum.ciklumwebhw3.servlet;
 
 import com.ciklum.ciklumwebhw3.dao.ProductDao;
 import com.ciklum.ciklumwebhw3.domain.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,12 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(urlPatterns = "/ProductServlet")
+@Component
 public class ProductServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private static String PRODUCT = "/product.jsp";
     private static String PRODUCT_LIST = "/product_list.jsp";
+
+    @Autowired
     private ProductDao dao;
+
 
     public ProductServlet() {
 
